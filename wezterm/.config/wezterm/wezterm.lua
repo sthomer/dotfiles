@@ -34,15 +34,13 @@ end
 
 config.color_scheme_dirs = { "~/.config/wezterm/colors" }
 config.color_scheme = scheme_for_appearance(get_appearance())
--- config.color_scheme = "Catppuccin Mocha"
-
-config.enable_tab_bar = true
-config.use_fancy_tab_bar = true
-config.integrated_title_button_alignment = "Left"
-config.integrated_title_buttons = { "Close" }
 
 -- 🪟 Window
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.integrated_title_button_alignment = "Left"
+config.integrated_title_buttons = { "Close" }
+config.enable_tab_bar = true
+config.use_fancy_tab_bar = false
 
 -- ⚡ Performance / Wayland
 config.enable_wayland = true
