@@ -1,3 +1,5 @@
 [user]
 	email = steven.t.homer@proton.me
 	name = Steve Homer
+[init]
+	defaultBranch = main
