@@ -7,9 +7,7 @@ if wezterm.config_builder then
 end
 
 -- 🔤 Font
-config.font = wezterm.font_with_fallback({
-	"JetBrainsMono Nerd Font Mono",
-})
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Medium" })
 config.font_size = 14
 config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
 
