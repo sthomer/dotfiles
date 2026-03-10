@@ -10,7 +10,7 @@ end
 config.font = wezterm.font_with_fallback({
 	"JetBrainsMono Nerd Font Mono",
 })
-config.font_size = 10
+config.font_size = 14
 config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
 
 -- 🎨 Theme
@@ -40,7 +40,7 @@ config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.integrated_title_button_alignment = "Left"
 config.integrated_title_buttons = { "Close" }
 config.enable_tab_bar = true
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 
 -- ⚡ Performance / Wayland
 config.enable_wayland = true
