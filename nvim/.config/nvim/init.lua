@@ -1413,26 +1413,56 @@ require('lazy').setup({
   {
     'ojroques/nvim-osc52',
     config = function()
-      -- Optional: Configure the plugin with your preferences
       require('osc52').setup {
-        max_length = 0, -- Set to 0 to disable max length limit
+        max_length = 0, -- Optional: No length limit
         silent = true, -- Disable notifications
       }
+      -- Function to format lines (table) into a single string
+      local function copy(lines, _)
+        require('osc52').copy(table.concat(lines, '\n'))
+      end
+      -- Function to get the register content as a table of lines
+      local function paste()
+        return { vim.fn.split(vim.fn.getreg '', '\n'), vim.fn.getregtype '' }
+      end
 
-      -- Integrate with Neovim's clipboard settings
       vim.g.clipboard = {
         name = 'osc52',
         copy = {
-          ['+'] = require('osc52').copy,
-          ['*'] = require('osc52').copy,
+          ['+'] = copy,
+          ['*'] = copy,
         },
         paste = {
-          ['+'] = require('osc52').paste, -- Paste might not work via OSC52 in some terminals
-          ['*'] = require('osc52').paste,
+          ['+'] = paste,
+          ['*'] = paste,
         },
       }
     end,
   },
+
+  -- {
+  --   'ojroques/nvim-osc52',
+  --   config = function()
+  --     -- Optional: Configure the plugin with your preferences
+  --     require('osc52').setup {
+  --       max_length = 0, -- Set to 0 to disable max length limit
+  --       silent = true, -- Disable notifications
+  --     }
+  --
+  --     -- Integrate with Neovim's clipboard settings
+  --     vim.g.clipboard = {
+  --       name = 'osc52',
+  --       copy = {
+  --         ['+'] = require('osc52').copy,
+  --         ['*'] = require('osc52').copy,
+  --       },
+  --       paste = {
+  --         ['+'] = require('osc52').paste, -- Paste might not work via OSC52 in some terminals
+  --         ['*'] = require('osc52').paste,
+  --       },
+  --     }
+  --   end,
+  -- },
 
   {
     'benomahony/uv.nvim',
