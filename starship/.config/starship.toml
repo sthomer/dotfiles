@@ -99,6 +99,7 @@ symbol = "fossil "
 truncation_symbol = "..."
 
 [gcloud]
+disabled = true
 symbol = "gcp "
 
 [git_branch]
