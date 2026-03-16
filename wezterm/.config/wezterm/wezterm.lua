@@ -6,15 +6,15 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- 🔤 Font
+-- Font
+config.initial_cols = 80
+config.initial_rows = 28
 config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Medium" })
 config.font_size = 14
 config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
 
--- 🎨 Theme
+-- Theme
 
--- wezterm.gui is not available to the mux server, so take care to
--- do something reasonable when this config is evaluated by the mux
 function get_appearance()
 	if wezterm.gui then
 		return wezterm.gui.get_appearance()
@@ -33,14 +33,16 @@ end
 config.color_scheme_dirs = { "~/.config/wezterm/colors" }
 config.color_scheme = scheme_for_appearance(get_appearance())
 
--- 🪟 Window
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.integrated_title_button_alignment = "Left"
-config.integrated_title_buttons = { "Close" }
+-- Window
+config.window_decorations = "RESIZE"
+-- config.integrated_title_button_alignment = "Left"
+-- config.integrated_title_buttons = { "Close" }
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = true
 
--- ⚡ Performance / Wayland
+config.audible_bell = "Disabled"
+
+-- Performance / Wayland
 config.enable_wayland = true
 config.front_end = "WebGpu"
 
@@ -50,9 +52,9 @@ config.leader = {
 	timeout_milliseconds = 1000,
 }
 
--- 🧩 Tabs & Splits Keybindings
+-- Tabs & Splits Keybindings
 config.keys = {
-	-- === Tabs ===
+	-- Tabs
 	{
 		key = "t",
 		mods = "LEADER",
@@ -91,7 +93,7 @@ config.keys = {
 		action = wezterm.action.ActivateTab(4),
 	},
 
-	-- === Splits ===
+	-- Splits
 	{
 		key = "|",
 		mods = "LEADER|SHIFT",
@@ -110,7 +112,7 @@ config.keys = {
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 
-	-- === Pane Navigation (Vim style) ===
+	-- Pane Navigation (Vim style)
 	{
 		key = "h",
 		mods = "LEADER",
@@ -132,7 +134,7 @@ config.keys = {
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 
-	-- === Resize Panes ===
+	-- Resize Panes
 	{
 		key = "H",
 		mods = "LEADER|SHIFT",
@@ -155,10 +157,10 @@ config.keys = {
 	},
 }
 
--- 🖱 Better scrollback
+-- Better scrollback
 config.scrollback_lines = 10000
 
--- 🧠 Smart tab titles (shows current directory)
+-- Smart tab titles (shows current directory)
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 	local pane = tab.active_pane
 	local title = pane.title
