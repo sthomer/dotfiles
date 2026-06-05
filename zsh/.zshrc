@@ -27,6 +27,8 @@ alias grep="grep --color"
 alias ls="ls --color"
 alias ll="ls -lah"
 
+alias qwen3='~/bin/run-llama "$HOME/models/qwen3-8b/Qwen3-8B-Q8_0.gguf"'
+
 # Activations
 
 eval "$(starship init zsh)"

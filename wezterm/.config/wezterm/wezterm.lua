@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
 local config = {}
 
 -- Use config builder if available (newer versions)
@@ -9,8 +10,8 @@ end
 -- Font
 config.initial_cols = 80
 config.initial_rows = 28
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Medium" })
-config.font_size = 14
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+config.font_size = 11
 config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
 
 -- Theme

@@ -3,3 +3,5 @@
 	name = Steve Homer
 [init]
 	defaultBranch = main
+[credential]
+	helper = store
