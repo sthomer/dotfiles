@@ -11,7 +11,7 @@ end
 config.initial_cols = 80
 config.initial_rows = 28
 config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
-config.font_size = 11
+config.font_size = 14
 config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
 
 -- Theme
