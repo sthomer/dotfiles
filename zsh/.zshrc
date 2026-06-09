@@ -27,6 +27,7 @@ export EDITOR=nvim
 alias grep="grep --color"
 alias ls="ls --color"
 alias ll="ls -lah"
+alias tree="tree -aCI '.git'"
 
 # Activations
 

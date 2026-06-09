@@ -1,7 +1,9 @@
 [user]
-	email = steven.t.homer@proton.me
 	name = Steve Homer
+	email = steven.t.homer@proton.me
+
 [init]
 	defaultBranch = main
+
 [credential]
 	helper = store
