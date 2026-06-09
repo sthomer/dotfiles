@@ -10,9 +10,28 @@ end
 -- Font
 config.initial_cols = 80
 config.initial_rows = 28
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
 config.font_size = 14
-config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
+
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+config.harfbuzz_features = {
+	"calt=1", -- ligatures
+}
+
+-- config.font = wezterm.font("JuliaMono")
+-- config.harfbuzz_features = {
+-- 	"calt=1", -- ligatures
+-- 	"ss01=1", -- alternate g
+-- 	"ss03=1", -- alternate j
+-- 	"ss10=1", -- alternate r
+-- 	"ss12=1", -- joining equals
+-- 	"ss14=1", -- double equals
+-- 	"ss19=1", -- kerning
+-- 	"cv04=1", -- alternate l
+-- 	"cv05=1", -- leq/geq ligatures
+-- 	"cv07=1", -- thinner punctuation
+-- }
+
+config.enable_kitty_graphics = true
 
 -- Theme
 

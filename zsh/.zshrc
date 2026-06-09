@@ -4,6 +4,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
 setopt extendedglob nomatch notify
+setopt NO_BEEP
 unsetopt autocd beep
 zstyle :compinstall filename '/home/sthomer/.zshrc'
 autoload -Uz compinit
@@ -27,22 +28,8 @@ alias grep="grep --color"
 alias ls="ls --color"
 alias ll="ls -lah"
 
-alias qwen3='~/bin/run-llama "$HOME/models/qwen3-8b/Qwen3-8B-Q8_0.gguf"'
-
 # Activations
 
 eval "$(starship init zsh)"
 
-# eval "$(mise activate zsh)"
-
-# Path
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/sthomer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sthomer/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/sthomer/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sthomer/google-cloud-sdk/completion.zsh.inc'; fi
-
-# export PATH="$PATH:/Users/sthomer/.lmstudio/bin"
-# export PATH="$PATH:/Users/stomer/.cargo/bin"
-# export PATH="$PATH:/opt/nvim-macos-arm64/bin"
+eval "$(mise activate zsh)"
